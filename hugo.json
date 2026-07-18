@@ -1,17 +1,21 @@
 {
-  "baseURL": "https://example.org/",
-  "title": "Project Documentation",
+  "baseURL": "https://tsvsheet.github.io/docs.tq.go/",
+  "title": "tq",
   "publishDir": "_site",
   "enableRobotsTXT": true,
   "markup": {
     "goldmark": {
       "renderHooks": {
-        "link": { "useEmbedded": "fallback" },
-        "image": { "useEmbedded": "fallback" }
+        "link": {
+          "useEmbedded": "fallback"
+        },
+        "image": {
+          "useEmbedded": "fallback"
+        }
       }
     }
   },
   "params": {
-    "description": "Public documentation for the project."
+    "description": "tq \u2014 the TSV query CLI: relational verbs over TSV/tsvt tables with tsvsheet expressions."
   }
 }
