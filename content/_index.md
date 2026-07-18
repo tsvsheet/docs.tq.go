@@ -25,7 +25,7 @@ The file may be omitted or `-` to read stdin, so `tq` composes in ordinary pipes
 | `--at RFC3339` | Fix the clock volatile functions (`today()`, `now()`) read — reproducible runs. |
 | `--log-level`, `--log-format` | Standard tsvsheet logging controls. |
 
-Exit codes: **0** success · **1** the program failed against the data (unknown column, raw A1 reference, headerless `rename`, strict abort, input ceiling) with a one-line diagnostic on stderr · **2** query syntax error, with line and column.
+Exit codes: **0** success · **2** query syntax error, with line and column · **1** any other error — invalid usage or a program failure against the data (unknown column, raw A1 reference, headerless `rename`, strict abort, input ceiling, unreadable file) — with a one-line diagnostic on stderr and nothing on stdout.
 
 `tq completion bash|zsh|fish` emits shell completion.
 
