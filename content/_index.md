@@ -10,7 +10,7 @@ tq 'where [stars] > 1000 | derive ratio = round([stars] / [forks], 2) | select n
 
 ## Usage
 
-```
+```text
 tq '<query>' [file]
 ```
 
