@@ -33,6 +33,10 @@ Exit codes: **0** success · **2** query syntax error, with line and column · *
 
 Verbs: `select` · `drop` · `where` · `derive` · `rename` · `sort` (stable, typed, `-` descending) · `distinct` · `limit` · `offset` · `group keys { name = aggregate, … }`. The first input row is the header; columns are `[name]` or `[N]` in expressions and bare identifiers in verb positions. Expressions are exactly tsvsheet's formula language — same functions, coercions, and error values — except `|` always means "next stage". When the input is a `.tsvt`, the sheet is computed first and the query sees values. The normative specification lives in the [tq language repo](https://github.com/tsvsheet/tq).
 
+## When to reach for tq — and when not to
+
+For heavy analytics over large value-only TSVs — joins, window functions, multi-gigabyte scans — a SQL engine like [DuckDB](https://duckdb.org) is the right tool; tq does not compete there. tq is for the cases a SQL engine structurally misses: a `.tsvt` input is computed first, so the query sees the sheet's values instead of its `=formula` text; a predicate behaves exactly like the same formula in a cell; cells stay raw text end to end, with no type sniffing that would turn `01` into `1` or re-render your data on output; and a quick filter stays a one-line pipeline between `cut` and `jq`.
+
 ## Install
 
 ```sh
