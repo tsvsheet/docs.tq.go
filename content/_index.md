@@ -31,7 +31,7 @@ Exit codes: **0** success · **2** query syntax error, with line and column · *
 
 ## The language, in one paragraph
 
-Verbs: `select` · `drop` · `where` · `derive` · `rename` · `sort` (stable, typed, `-` descending) · `distinct` · `limit` · `offset` · `group keys { name = aggregate, … }`. The first input row is the header; columns are `[name]` or `[N]` in expressions and bare identifiers in verb positions. Expressions are exactly tsvsheet's formula language — same functions, coercions, and error values — except `|` always means "next stage". When the input is a `.tsvt`, the sheet is computed first and the query sees values. The normative specification lives in the [tq language repo](https://github.com/tsvsheet/tq).
+Verbs: `select` · `drop` · `where` · `derive` · `rename` · `sort` (stable, typed, `-` descending) · `distinct` · `limit` · `offset` · `group keys { name = aggregate, … }`. The first input row is the header; columns are `[name]` or `[N]` in expressions and bare identifiers in verb positions. Expressions are exactly tsvsheet's formula language — same functions, coercions, and error values, the [whole library](https://tsvsheet.com/functions/) from `sum` and `regexmatch` to `jsonget`, `urlhost`, `sha256`, and the windowed timeseries functions — except `|` always means "next stage". When the input is a `.tsvt`, the sheet is computed first and the query sees values. The normative specification lives in the [tq language repo](https://github.com/tsvsheet/tq).
 
 ## When to reach for tq — and when not to
 
