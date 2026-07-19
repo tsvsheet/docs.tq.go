@@ -39,4 +39,9 @@ Verbs: `select` · `drop` · `where` · `derive` · `rename` · `sort` (stable, 
 go install github.com/tsvsheet/tq.go/cmd/tq@latest
 ```
 
-Homebrew/Scoop packaging follows the tsvsheet formulas once released.
+Or via a package manager — both install shell completions and the man page:
+
+```sh
+brew install tsvsheet/tap/tq   # macOS & Linux
+scoop install tq               # Windows (bucket: tsvsheet/scoop-bucket)
+```
