@@ -1,5 +1,5 @@
 ---
-title: Home
+title: tq.go
 ---
 
 **`tq` — query TSV like a table, not a text file.** tq is the query language of the [tsvsheet](https://github.com/tsvsheet/tsvsheet) ecosystem: a `|`-separated pipeline of relational verbs over a TSV or tsvt table, with every embedded expression written in the tsvsheet formula language. The `tq` binary is a thin frontend over the [go-tq](https://tsvsheet.github.io/docs.go-tq/) engine — TSV in on stdin or a file, TSV out on stdout — sitting between `cut` (columns, no predicates) and `jq` (predicates, no tables).
